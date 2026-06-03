@@ -12,7 +12,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.datalayertest"
+        applicationId = "com.pedroaba.tccmobile"
         minSdk = 30
         targetSdk = 36
         versionCode = 1
