@@ -66,6 +66,10 @@
                     android:host="*"
                     android:path="/game-progress"
                     android:scheme="wear" />
+                <data
+                    android:host="*"
+                    android:path="/telemetry-control"
+                    android:scheme="wear" />
             </intent-filter>
         </service>
     </application>

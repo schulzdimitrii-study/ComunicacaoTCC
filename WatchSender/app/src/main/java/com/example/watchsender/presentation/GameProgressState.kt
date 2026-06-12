@@ -75,6 +75,19 @@ object GameProgressStore {
         )
     }
 
+    fun clear(context: Context) {
+        context.getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE)
+            .edit()
+            .remove(KEY_PAYLOAD)
+            .apply()
+
+        context.sendBroadcast(
+            Intent(ACTION_GAME_PROGRESS_CHANGED).apply {
+                setPackage(context.packageName)
+            }
+        )
+    }
+
     private fun JSONObject.optionalString(name: String): String? {
         if (!has(name) || isNull(name)) return null
         return runCatching { getString(name) }.getOrNull()
